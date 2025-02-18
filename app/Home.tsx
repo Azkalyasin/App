@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView, TextInput, TouchableOpacity } from "react-native";
 import { useFonts } from "expo-font";
 import Card from "./Card";
+import Tab from "./Tab";
 
 const muka = require("../assets/images/image.png");
 const notif = require("../assets/images/notife.png");
@@ -21,42 +22,47 @@ const Home = () => {
   return (
     <ScrollView style={styles.container}>
       <SafeAreaView>
-        <View>
-          {/* Header */}
-          <View style={styles.head}>
-            <Image source={muka} style={styles.profileImage} />
-            <View style={styles.textContainer}>
-              <Text style={styles.greeting}>Good Morning</Text>
-              <Text style={styles.username}>Adrian Hajdin</Text>
-            </View>
-            <TouchableOpacity>
-              <Image source={notif} style={styles.notifIcon} />
-            </TouchableOpacity>
+        {/* Header */}
+        <View style={styles.head}>
+          <Image source={muka} style={styles.profileImage} />
+          <View style={styles.textContainer}>
+            <Text style={styles.greeting}>Good Morning</Text>
+            <Text style={styles.username}>Adrian Hajdin</Text>
           </View>
-
-          {/* Search Bar */}
-          <View style={styles.searchContainer}>
-            <Image source={iconserch} style={styles.searchIcon} />
-            <TextInput style={styles.searchInput} placeholder="Search something" placeholderTextColor="#8C8E98" value={searchText} onChangeText={setSearchText} />
-            <TouchableOpacity>
-              <Image source={iconfilter} style={styles.filterIcon} />
-            </TouchableOpacity>
-          </View>
-
-          {/*featured*/}
-          <View style={styles.feature}>
-            <Text style={{ fontWeight: 600, fontSize: 20, fontFamily: "Rubik-Regular", color: "#191D31" }}>Featured</Text>
-            <Text style={{ fontWeight: 600, fontSize: 16, fontFamily: "Rubik-Regular", color: "#0061FF" }}>See All</Text>
-          </View>
+          <TouchableOpacity>
+            <Image source={notif} style={styles.notifIcon} />
+          </TouchableOpacity>
         </View>
+
+        {/* Search Bar */}
+        <View style={styles.searchContainer}>
+          <Image source={iconserch} style={styles.searchIcon} />
+          <TextInput style={styles.searchInput} placeholder="Search something" placeholderTextColor="#8C8E98" value={searchText} onChangeText={setSearchText} />
+          <TouchableOpacity>
+            <Image source={iconfilter} style={styles.filterIcon} />
+          </TouchableOpacity>
+        </View>
+
+        {/*featured*/}
+        <View style={styles.feature}>
+          <Text style={{ fontWeight: 600, fontSize: 20, fontFamily: "Rubik-Regular", color: "#191D31" }}>Featured</Text>
+          <Text style={{ fontWeight: 600, fontSize: 16, fontFamily: "Rubik-Regular", color: "#0061FF" }}>See All</Text>
+        </View>
+
         {/*Card*/}
         <View>
           <Card></Card>
         </View>
+
         {/*Rocomendation*/}
         <View style={styles.recomend}>
           <Text style={{ fontWeight: 600, fontSize: 20, fontFamily: "Rubik-Regular", color: "#191D31" }}>Our Recomendation</Text>
           <Text style={{ fontWeight: 600, fontSize: 16, fontFamily: "Rubik-Regular", color: "#0061FF" }}>See All</Text>
+        </View>
+
+        {/*Tab*/}
+        <View>
+          <Tab></Tab>
         </View>
       </SafeAreaView>
     </ScrollView>
@@ -76,6 +82,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 20,
     justifyContent: "space-between",
+    paddingLeft: 20,
   },
   profileImage: {
     width: 44,
@@ -105,8 +112,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#FBFBFD",
-    borderRadius: 10,
-    paddingHorizontal: 10,
+    borderRadius: 20,
+    paddingHorizontal: 20,
     width: "100%",
     height: 60,
     marginTop: 20,
@@ -143,7 +150,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     justifyContent: "space-between",
-  }
+  },
 });
 
 export default Home;
