@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView, TextInput, Tou
 import { useFonts } from "expo-font";
 import Card from "./Card";
 import Tab from "./Tab";
+import CardGrid from "./CardGrid";
 
 const muka = require("../assets/images/image.png");
 const notif = require("../assets/images/notife.png");
@@ -63,6 +64,10 @@ const Home = () => {
         {/*Tab*/}
         <View>
           <Tab></Tab>
+        </View>
+
+        <View>
+          <CardGrid></CardGrid>
         </View>
       </SafeAreaView>
     </ScrollView>

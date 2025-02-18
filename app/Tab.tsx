@@ -52,11 +52,12 @@ const styles = StyleSheet.create({
     height:41
   },
   tabButton: {
-    backgroundColor: "#ddd",
+    backgroundColor: "#0061FF0A",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 30,
     marginHorizontal: 5,
+    borderColor:"#0061FF1A"
   },
   selectedButton: {
     backgroundColor: "#0061FF", 
